@@ -50,3 +50,11 @@ module.exports.user_update = async (req, res) => {
     res.send(error);
   }
 };
+module.exports.user_get= async (req, res) => {
+  try {
+    const user = await UserModel.find({});
+    res.send(user)
+  } catch (error) {
+    res.send(error);
+  }
+};

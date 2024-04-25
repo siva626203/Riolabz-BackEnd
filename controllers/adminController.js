@@ -35,6 +35,7 @@ module.exports.admin_login = async (req, res) => {
 };
 module.exports.user_promote = async (req, res) => {
   try {
+    console.log(res.body);
     const userPromotion = await UserModel.updateOne({ email: req.body.email },{type:req.body.type});
     if (userPromotion.matchedCount !== 0) {
       res.send({
